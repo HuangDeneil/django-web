@@ -1,0 +1,7 @@
+*.sqlite3
+*.json
+*.csv
+__pycache__
+*.pyc
+
+
