@@ -1,4 +1,4 @@
-"""keyboardmarket URL Configuration
+"""main URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from main import settings
+from django.conf.urls.static import static
+from django.conf.urls import url,include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url('product',include('product.urls')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
